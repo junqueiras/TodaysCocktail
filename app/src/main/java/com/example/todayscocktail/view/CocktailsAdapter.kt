@@ -15,8 +15,8 @@ class CocktailsAdapter(private val dataList: MutableList<Cocktail>): RecyclerVie
     private lateinit var context: Context
 
     inner class CocktailsItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val cocktailName: TextView = itemView.findViewById(R.id.name)
-        val cocktailThumb: ImageView = itemView.findViewById(R.id.thumb)
+        val cocktailName: TextView = itemView.findViewById(R.id.name) //colocar id do nome
+        val cocktailThumb: ImageView = itemView.findViewById(R.id.thumb) //colocar id thumb
 
         fun loadData(name: String, thumb: String) {
             cocktailName.text = name
@@ -29,7 +29,7 @@ class CocktailsAdapter(private val dataList: MutableList<Cocktail>): RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CocktailsItemViewHolder {
         context = parent.context
         return CocktailsItemViewHolder(LayoutInflater.from(context)
-            .inflate(R.layout.item_view, parent, false))
+            .inflate(R.layout.item_view, parent, false)) //alterar nome da recycleview
     }
 
     override fun onBindViewHolder(holder: CocktailsItemViewHolder, position: Int) {
