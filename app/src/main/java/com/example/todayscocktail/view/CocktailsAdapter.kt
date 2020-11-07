@@ -11,7 +11,13 @@ import com.bumptech.glide.Glide
 import com.example.todayscocktail.R
 import com.example.todayscocktail.network.Cocktail
 
-class CocktailsAdapter(private val dataList: MutableList<Cocktail>): RecyclerView.Adapter<CocktailsAdapter.CocktailsItemViewHolder>() {
+class CocktailsAdapter(): RecyclerView.Adapter<CocktailsAdapter.CocktailsItemViewHolder>() {
+    var dataList = listOf<Cocktail>()
+        set(value){
+            field = value
+            notifyDataSetChanged()
+        }
+
     private lateinit var context: Context
 
     inner class CocktailsItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -40,6 +46,5 @@ class CocktailsAdapter(private val dataList: MutableList<Cocktail>): RecyclerVie
 
     override fun getItemCount(): Int {
         return dataList.size
-        }
     }
 }
