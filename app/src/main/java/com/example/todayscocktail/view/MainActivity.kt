@@ -34,7 +34,5 @@ class MainActivity : AppCompatActivity() {
 
         val cocktailsItems = viewModel.cocktailList
         cocktailsItems.observe(this, Observer { adapter.dataList = it })
-
-
     }
 }
