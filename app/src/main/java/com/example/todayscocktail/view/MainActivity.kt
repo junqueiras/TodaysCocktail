@@ -1,12 +1,18 @@
-package com.example.todayscocktail
+package com.example.todayscocktail.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.inflate
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.todayscocktail.R
 import com.example.todayscocktail.databinding.ActivityMainBinding
+import com.example.todayscocktail.network.Cocktail
 import com.example.todayscocktail.repository.CocktailsListRepository
-import com.example.todayscocktail.view.CocktailsAdapter
 import com.example.todayscocktail.viewmodel.CocktailsListViewModel
 import com.example.todayscocktail.viewmodel.CocktailsListViewModelFactory
 
@@ -29,5 +35,4 @@ class MainActivity : AppCompatActivity() {
         val cocktailsItems = viewModel.cocktailList
         cocktailsItems.observe(this, Observer { adapter.dataList = it })
     }
-
 }
